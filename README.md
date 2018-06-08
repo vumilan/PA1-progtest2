@@ -87,9 +87,8 @@ Nespravny vstup.
 * Bonusový test vede k velkým rozměrům koupelny, tyto rozměry se nevejdou do datového typu int ani float. Pokud chcete zvládnout bonusový test, musíte použít větší datový typ (např. long long int, jeho správné použití nezpůsobí varování, kompilátor používá přepínač -Wno-long-long). Pokud Vaše implementace neprovádí aritmetické operace rozumně úsporně, může rozsah datových typů působit problémy i v ostatních testech.
 * Při programování si dejte pozor na přesnou podobu výpisů. Výstup Vašeho programu kontroluje stroj, který požaduje přesnou shodu výstupů Vašeho programu s výstupy referenčními. Za chybu je považováno, pokud se výpis liší. I chybějící nebo přebývající mezera/odřádkování je považováno za chybu. Abyste tyto problémy rychle vyloučili, použijte přiložený archiv se sadou vstupních a očekávaných výstupních dat. Podívejte se na videotutoriál (edux -> výuková videa), jak testovací data použít a jak testování zautomatizovat.
 * Platné rozměry jsou například 10.5, 17 nebo 24.0. Neplatný rozměr je například 25.06 (přesnost vyšší než na milimetry). Vstup typu 12.00 považujte za platný, přestože obsahuje dvě desetinná místa. Progtest takové hodnoty při testování nezadává, z hlediska implementace je trochu jednodušší takový vstup přijímat (odmítnutí takového vstupu by bylo implementačně pracnější, museli byste realizovat vlastní převod vstupu na desetinné číslo).
-* Slovní popis struktury platných vstupních dat není zcela exaktní. Proto připojujeme i formální popis vstupního jazyka v 
+* Slovní popis struktury platných vstupních dat není zcela exaktní. Proto připojujeme i formální popis vstupního jazyka v EBNF:
 ```
-EBNF:
     input      ::= { whiteSpace } minSize { whiteSpace } tile 
                    { whiteSpace } { tile { whiteSpace } }
     whiteSpace ::= ' ' | '\t' | '\n' | '\r'
